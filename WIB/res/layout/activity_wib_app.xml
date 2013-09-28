@@ -8,9 +8,149 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".WIB_app" >
 
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_marginLeft="@dimen/image_button_margin"
+        android:layout_marginRight="@dimen/image_button_margin"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_marginLeft="@dimen/image_button_margin"
+        android:layout_marginRight="@dimen/image_button_margin"
+        android:layout_alignTop="@+id/imageButton1"
+        android:layout_toRightOf="@+id/imageButton1"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_marginLeft="@dimen/image_button_margin"
+        android:layout_marginRight="@dimen/image_button_margin"
+        android:layout_alignTop="@+id/imageButton2"
+        android:layout_toRightOf="@+id/imageButton2"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_marginLeft="@dimen/image_button_margin"
+        android:layout_marginRight="@dimen/image_button_margin"
+        android:layout_alignTop="@+id/imageButton3"
+        android:layout_toRightOf="@+id/imageButton3"
+        android:src="@drawable/ic_launcher" />
+
+    <!-- TextView positioning and sizing can be fixed once we know what the buttons do. -->
     <TextView
+        android:id="@+id/label1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignLeft="@+id/imageButton1"
+        android:layout_below="@+id/imageButton1"
+        android:text="@string/imgButtonOneLabel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/label_size" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:layout_below="@+id/imageButton2"
+        android:layout_toRightOf="@+id/imageButton1"
+        android:text="@string/imgButtonTwoLabel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/label_size" />
+
+    <TextView
+        android:id="@+id/label3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_below="@+id/imageButton3"
+        android:layout_toRightOf="@+id/imageButton2"
+        android:text="@string/imgButtonThreeLabel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/label_size" />
+
+    <TextView
+        android:id="@+id/label4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton4"
+        android:layout_below="@+id/imageButton4"
+        android:layout_toRightOf="@+id/imageButton3"
+        android:text="@string/imgButtonFourLabel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/label_size" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_marginLeft="@dimen/image_button_margin"
+        android:layout_marginRight="@dimen/image_button_margin"
+        android:layout_alignLeft="@+id/imageButton1"
+        android:layout_below="@+id/imageButton1"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_launcher" />
+    
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_marginLeft="@dimen/image_button_margin"
+        android:layout_marginRight="@dimen/image_button_margin"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:layout_below="@+id/imageButton2"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_launcher" />
+    
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_marginLeft="@dimen/image_button_margin"
+        android:layout_marginRight="@dimen/image_button_margin"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_below="@+id/imageButton3"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/label5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton5"
+        android:layout_below="@+id/imageButton5"
+        android:text="@string/imgButtonFiveLabel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/label_size" />
+    
+    <TextView
+        android:id="@+id/label6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton6"
+        android:layout_below="@+id/imageButton6"
+        android:text="@string/imgButtonSixLabel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/label_size" />
+    
+    <TextView
+        android:id="@+id/label7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton7"
+        android:layout_below="@+id/imageButton7"
+        android:text="@string/imgButtonSevenLabel"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/label_size" />
 
 </RelativeLayout>

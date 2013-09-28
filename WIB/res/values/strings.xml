@@ -3,6 +3,12 @@
 
     <string name="app_name">WIB</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="imgButtonOneLabel">Button 1</string>
+    <string name="imgButtonTwoLabel">Button 2</string>
+    <string name="imgButtonThreeLabel">Button 3</string>
+    <string name="imgButtonFourLabel">Button 4</string>
+    <string name="imgButtonFiveLabel">Button 5</string>
+    <string name="imgButtonSixLabel">Button 6</string>
+    <string name="imgButtonSevenLabel">Button 7</string>
 
 </resources>
