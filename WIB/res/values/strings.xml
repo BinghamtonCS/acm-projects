@@ -10,5 +10,8 @@
     <string name="imgButtonFiveLabel">Button 5</string>
     <string name="imgButtonSixLabel">Button 6</string>
     <string name="imgButtonSevenLabel">Button 7</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_facebook_view">FacebookViewActivity</string>
 
 </resources>

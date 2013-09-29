@@ -5,6 +5,7 @@ package com.gabeochoa.wib;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -16,7 +17,7 @@ public class WIB_app extends Activity implements OnClickListener
 {
 	
 	private static final String TAG = "MainActivity";
-	private ImageButton imgButton1, imgButton2, imgButton3, imgButton4;
+	private ImageButton imgButton1, imgButton2, imgButton3, imgButton4, imgButton5, imgButton6, imgButton7;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -81,11 +82,17 @@ public class WIB_app extends Activity implements OnClickListener
 		imgButton2 = (ImageButton)findViewById(R.id.imageButton2);
 		imgButton3 = (ImageButton)findViewById(R.id.imageButton3);
 		imgButton4 = (ImageButton)findViewById(R.id.imageButton4);
+		imgButton5 = (ImageButton)findViewById(R.id.imageButton5);
+		imgButton6 = (ImageButton)findViewById(R.id.imageButton6);
+		imgButton7 = (ImageButton)findViewById(R.id.imageButton7);
 		
 		imgButton1.setOnClickListener(this);
 		imgButton2.setOnClickListener(this);
 		imgButton3.setOnClickListener(this);
 		imgButton4.setOnClickListener(this);
+		imgButton5.setOnClickListener(this);
+		imgButton6.setOnClickListener(this);
+		imgButton7.setOnClickListener(this);
 	}
 
 
@@ -102,6 +109,7 @@ public class WIB_app extends Activity implements OnClickListener
 	public void onClick(View view) 
 	{
 		Log.d(TAG, "Button " + view.getId() + " selected.");
+		Intent i;
 		
 		switch(view.getId())
 		{
@@ -117,9 +125,13 @@ public class WIB_app extends Activity implements OnClickListener
 			case R.id.imageButton4:
 				Toast.makeText(this, "You pressed Button 4", Toast.LENGTH_SHORT).show();
 				break;
+			case R.id.imageButton5:
+				i = new Intent(this, FacebookViewActivity.class);
+				startActivity(i);
+				break;
 			default:break;
 		}
-		
+
 	}
 
 }
