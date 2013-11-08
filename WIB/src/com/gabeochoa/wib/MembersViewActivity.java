@@ -35,12 +35,14 @@ public class MembersViewActivity extends Activity {
 		
 		if(checkDate())
 		{
+			System.out.println("Check Date returned true");
 			members = GetMembers.getFromFile(file);
 			if(members != null)
 			GetMembers.write(file, members, this.getApplicationContext());
 		}
 		else
 		{
+			System.out.println("Check Date returned false");
 			members = GetMembers.get();
 		}
 		

@@ -20,6 +20,7 @@ import org.jsoup.select.Elements;
 
 import android.content.Context;
 import android.os.Environment;
+import android.util.Log;
 
 /**
  *  Author: Gabriel Ochoa
@@ -160,6 +161,8 @@ public class GetMembers {
 		  </div>
 		 		 
 		 * */
+		
+		System.out.println("INSIDE GETDATA METHOD");
 		
 		try {
 			wibSite = Jsoup.connect("http://www.binghamtonwib.com/about-us/current-members/").get();
