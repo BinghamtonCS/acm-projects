@@ -115,9 +115,13 @@ public class WIB_app extends Activity implements OnClickListener
 		{
 			case R.id.imageButton1:
 				Toast.makeText(this, "You pressed Button 1", Toast.LENGTH_SHORT).show();
+				i = new Intent(this, AboutView.class);
+				startActivity(i);
 				break;
 			case R.id.imageButton2:
 				Toast.makeText(this, "You pressed Button 2", Toast.LENGTH_SHORT).show();
+				i = new Intent(this, MembersViewActivity.class);
+				startActivity(i);
 				break;
 			case R.id.imageButton3:
 				Toast.makeText(this, "You pressed Button 3", Toast.LENGTH_SHORT).show();
