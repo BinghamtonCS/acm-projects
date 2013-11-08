@@ -45,6 +45,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gabeochoa.wib.WIB_app" />
         </activity>
+        <activity
+            android:name="com.gabeochoa.wib.CalendarViewActivity"
+            android:label="@string/title_activity_calendar_view" >
+        </activity>
     </application>
 
 </manifest>
