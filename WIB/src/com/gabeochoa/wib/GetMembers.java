@@ -19,8 +19,8 @@ import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Environment;
-import android.util.Log;
 
 /**
  *  Author: Gabriel Ochoa
@@ -29,12 +29,14 @@ public class GetMembers {
 
 	public static ArrayList<Person> get()
 	{
-		try {
-			return main(null);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+//		
+//		try {
+//			return main(null);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return null;
 	}
 
@@ -44,21 +46,21 @@ public class GetMembers {
 		StringBuilder text = new StringBuilder();
 		File data = null;
 		try {
-			
+
 			rVal = new ArrayList<Person>();
-			
+
 			File dir = Environment.getRootDirectory();
 			data = new File(dir,filename);
 
 			BufferedReader br = new BufferedReader(new FileReader(filename));  
 			String line;  
-			
+
 			String name = null;
 			String position = null;
 			String url = null;
-			
+
 			int count = 0;
-			
+
 			while ((line = br.readLine()) != null) {
 				switch(count)
 				{
@@ -77,7 +79,7 @@ public class GetMembers {
 				default:
 					count = 0;
 				}
-				
+
 				count++;
 				System.out.println("text : "+text+" : end");
 			}
@@ -85,64 +87,64 @@ public class GetMembers {
 		catch (IOException e) {
 			e.printStackTrace();          
 		}
-		
+
 		return null;
 	}
-	
+
 	public static void write(String filename, ArrayList<Person> list, Context ctx) {
-			        FileOutputStream fos;
-			        try {
-			            fos = ctx.openFileOutput(filename, Context.MODE_PRIVATE);
+		FileOutputStream fos;
+		try {
+			fos = ctx.openFileOutput(filename, Context.MODE_PRIVATE);
 
 
-			            ObjectOutputStream oos = new ObjectOutputStream(fos);
-			            for(Person p: list)
-						{
-							oos.writeObject(p.getName()+"\n");
-							oos.writeObject(p.getPosition()+"\n");
-							oos.writeObject(p.getPictureUrl()+"\n");
-							oos.writeObject("\n");
-						}
-			            
-			            oos.close();
-			        } catch (FileNotFoundException e) {
-			            e.printStackTrace();
-			        }catch(IOException e){
-			            e.printStackTrace();
-			        }
-			    }
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			for(Person p: list)
+			{
+				oos.writeObject(p.getName()+"\n");
+				oos.writeObject(p.getPosition()+"\n");
+				oos.writeObject(p.getPictureUrl()+"\n");
+				oos.writeObject("\n");
+			}
 
-	
-	
+			oos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+
+
 	public static ArrayList<Person> main(String[] args) throws InterruptedException
 	{
 		Queue<ArrayList<Person>> queue = new PriorityQueue<ArrayList<Person>>();
 		ArrayList<Person> h = new ArrayList<Person>();
-        int expectedResults = 2;
-        for (int i = 0; i < expectedResults; i++) {
-            new DownloadThread(queue).start();
-        }
+		int expectedResults = 2;
+		for (int i = 0; i < expectedResults; i++) {
+			new DownloadThread(queue).start();
+		}
 
-        int receivedResults = 0;
-        while (receivedResults < expectedResults) {
-            if (!queue.isEmpty()) {
-                System.out.println();
-                h = (queue.element());
-                receivedResults++;
-            }
-            Thread.sleep(1000);
-        }
+		int receivedResults = 0;
+		while (receivedResults < expectedResults) {
+			if (!queue.isEmpty()) {
+				System.out.println();
+				h = (queue.element());
+				receivedResults++;
+			}
+			Thread.sleep(1000);
+		}
 		return h; 
 	}
-	
-	@SuppressWarnings("unused")
+
+
 	public static ArrayList<Person> getDataFromInternet()
 	{
-		
+
 		Document wibSite = null;
-		
+
 		//Example of their website's person format
-		
+
 		/*
 		 <div id="attachment_176" class="wp-caption alignleft" style="width: 160px">
 			 <a href="http://binghamtonwib.com/wp-content/uploads/2012/12/561342_2271814399364_1399963296_n.jpg"
@@ -159,33 +161,33 @@ public class GetMembers {
 			  			<center>Tiffany Choi<br/> President</center>
 			  		</p>
 		  </div>
-		 		 
+
 		 * */
-		
+
 		System.out.println("INSIDE GETDATA METHOD");
-		
+
 		try {
 			wibSite = Jsoup.connect("http://www.binghamtonwib.com/about-us/current-members/").get();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		Elements pictureURL = wibSite.select("a[href^=http://binghamtonwib.com/wp-content/uploads/]");
 		ArrayList<String> urls = getURLs(pictureURL);
 
-		
+
 		try {
 			wibSite = Jsoup.connect("http://www.binghamtonwib.com/about-us/current-members/").get();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		Elements peoples = wibSite.select("div[id^=attachment");
 		ArrayList<Person> womenIB = getPeople(peoples,urls);
 
 
-		
-		
+
+
 		for(Person p: womenIB)
 		{
 			System.out.println(p.getName());
@@ -193,10 +195,10 @@ public class GetMembers {
 			System.out.println(p.getPictureUrl());
 			System.out.println("\n");
 		}
-		
+
 		return womenIB;
 	}
-	
+
 	/*
 	 * This method goes through the nodes extracted by Jsoups 'select' function and creates a list of URLs for
 	 * the pictures of the members of WIB.
@@ -207,13 +209,13 @@ public class GetMembers {
 	public static ArrayList<String> getURLs(Elements imgs)
 	{
 		ArrayList<String> URLS = new ArrayList<String>();
-		
+
 		for (Element iA : imgs) {
 			URLS.add(iA.attr("href"));
 		}
 		return URLS;
 	}
-	
+
 	/*
 	 * This method goes through the nodes extracted by Jsoups 'select' function and creates a list of people
 	 * that are members of WIB.
@@ -223,11 +225,11 @@ public class GetMembers {
 	 * */
 	public static ArrayList<Person> getPeople(Elements peoples, ArrayList<String> urls)
 	{
-		String[] nameAndPosition = null;
+		String[] nameAndPosition = {"","",""};
 		String URL = "";
 		ArrayList<Person> womenIB = new ArrayList<Person>();
 		int index = 0;
-		
+
 		for (Element pA : peoples) {
 			for (Node node : pA.childNodes()) {
 				if (node.nodeName().equals("center")) {
@@ -246,19 +248,23 @@ public class GetMembers {
 							}
 							nameAndPosition[2] = position;
 						}
+						
+						if(urls.size() <= index || URL == null)
+							URL = "";
+						else
+							URL = urls.get(index);
+						System.out.println(nameAndPosition[0]);
+						System.out.println(nameAndPosition[2]);
+						womenIB.add(new Person(nameAndPosition[0], nameAndPosition[2], URL));
+						index++;
 					}
+
 					
-					if(urls.size() <= index || URL == null)
-						URL = "";
-					else
-						URL = urls.get(index);
-					
-					womenIB.add(new Person(nameAndPosition[0], nameAndPosition[2], URL));
-					index++;
 				}
 			}
 		}
 		return womenIB;
 	}
-	
+
+
 }

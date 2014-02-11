@@ -8,6 +8,10 @@ import java.util.Date;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -33,19 +37,21 @@ public class MembersViewActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-		if(checkDate())
-		{
-			System.out.println("Check Date returned true");
-			members = GetMembers.getFromFile(file);
-			if(members != null)
-			GetMembers.write(file, members, this.getApplicationContext());
-		}
-		else
+
+//		if(checkDate())
+//		{
+//			System.out.println("Check Date returned true");
+//			members = GetMembers.getFromFile(file);
+//			if(members != null)
+//				GetMembers.write(file, members, this.getApplicationContext());
+//		}
+//		else
 		{
 			System.out.println("Check Date returned false");
+			new GetMembersTask().execute();
 			members = GetMembers.get();
 		}
-		
+
 		//We have to figure out how to best display the names/position/picture
 		//its possible we could do just a wall of faces and you click one and
 		//it will come up with the name and position of the person
@@ -56,10 +62,11 @@ public class MembersViewActivity extends Activity {
 
 	private void printNames() {
 		if(members != null)
-		for(Person p: members)
-		{
-			tV.append(p.toString());
-		}
+			for(Person p: members)
+			{
+				tV.append(p.toString());
+			}
+		
 	}
 
 	private boolean checkDate() {
@@ -122,5 +129,31 @@ public class MembersViewActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	private class GetMembersTask extends AsyncTask<String, Integer, ArrayList<Person>> {
+		protected ArrayList<Person> doInBackground(String... urls) {
+			
+			try {
+
+				return GetMembers.getDataFromInternet();
+
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onProgressUpdate(Integer... progress) {
+
+
+		}
+
+		protected void onPostExecute(String link) {
+
+		}
+	}
+
 
 }
