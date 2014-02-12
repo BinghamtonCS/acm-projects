@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -51,22 +52,24 @@ public class MembersViewActivity extends Activity {
 			new GetMembersTask().execute();
 			members = GetMembers.get();
 		}
+		printNames();
+	}
 
+	private void printNames() {
 		//We have to figure out how to best display the names/position/picture
 		//its possible we could do just a wall of faces and you click one and
 		//it will come up with the name and position of the person
 		tV = (TextView) findViewById(R.id.membersText);
-		printNames();
-
-	}
-
-	private void printNames() {
+		
+		String s = "NULL";
 		if(members != null)
 			for(Person p: members)
 			{
-				tV.append(p.toString());
+				s += p.toString();
+				Log.d("", p.toString());
+				//tV.append(p.toString());
 			}
-		
+		tV.setText(s);
 	}
 
 	private boolean checkDate() {

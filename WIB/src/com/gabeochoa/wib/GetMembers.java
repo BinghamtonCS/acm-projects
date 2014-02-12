@@ -81,7 +81,7 @@ public class GetMembers {
 				}
 
 				count++;
-				System.out.println("text : "+text+" : end");
+			//	System.out.println("text : "+text+" : end");
 			}
 		}
 		catch (IOException e) {
@@ -128,7 +128,7 @@ public class GetMembers {
 		int receivedResults = 0;
 		while (receivedResults < expectedResults) {
 			if (!queue.isEmpty()) {
-				System.out.println();
+				//System.out.println();
 				h = (queue.element());
 				receivedResults++;
 			}
@@ -164,7 +164,7 @@ public class GetMembers {
 
 		 * */
 
-		System.out.println("INSIDE GETDATA METHOD");
+		//System.out.println("INSIDE GETDATA METHOD");
 
 		try {
 			wibSite = Jsoup.connect("http://www.binghamtonwib.com/about-us/current-members/").get();
@@ -187,7 +187,7 @@ public class GetMembers {
 
 
 
-
+/*
 		for(Person p: womenIB)
 		{
 			System.out.println(p.getName());
@@ -195,7 +195,7 @@ public class GetMembers {
 			System.out.println(p.getPictureUrl());
 			System.out.println("\n");
 		}
-
+*/
 		return womenIB;
 	}
 
@@ -253,8 +253,8 @@ public class GetMembers {
 							URL = "";
 						else
 							URL = urls.get(index);
-						System.out.println(nameAndPosition[0]);
-						System.out.println(nameAndPosition[2]);
+					//	System.out.println(nameAndPosition[0]);
+					//	System.out.println(nameAndPosition[2]);
 						womenIB.add(new Person(nameAndPosition[0], nameAndPosition[2], URL));
 						index++;
 					}
