@@ -26,13 +26,15 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int placeholderimage=0x7f020001;
     }
     public static final class id {
         public static final int AboutViewDescrip=0x7f080014;
         public static final int aboutText=0x7f080000;
-        public static final int action_settings=0x7f080018;
+        public static final int action_settings=0x7f08001a;
         public static final int calendarView=0x7f080002;
         public static final int facebookView=0x7f080003;
+        public static final int image=0x7f080017;
         public static final int imageButton1=0x7f080006;
         public static final int imageButton2=0x7f080007;
         public static final int imageButton3=0x7f080008;
@@ -51,8 +53,9 @@ public final class R {
         public static final int lblListItem=0x7f080016;
         public static final int lvExp=0x7f080001;
         public static final int membersText=0x7f080004;
-        public static final int memberslistview=0x7f080017;
+        public static final int memberslistview=0x7f080019;
         public static final int pastEventsView=0x7f080005;
+        public static final int title=0x7f080018;
     }
     public static final class layout {
         public static final int activity_about_view=0x7f030000;

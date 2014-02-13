@@ -9,14 +9,12 @@ import java.util.concurrent.ExecutionException;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Paint.Style;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.NavUtils;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,6 +34,7 @@ public class MembersViewActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_members_view);
+		
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
@@ -79,6 +78,7 @@ public class MembersViewActivity extends Activity {
 				//tV.append(p.toString());
 			}
 		tV.setText(s);
+		tV.setMovementMethod(new ScrollingMovementMethod());
 	}
 
 	private boolean checkDate() {
