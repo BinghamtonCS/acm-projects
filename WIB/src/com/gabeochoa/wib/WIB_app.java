@@ -132,6 +132,11 @@ public class WIB_app extends Activity implements OnClickListener
 				i = new Intent(this, FacebookViewActivity.class);
 				startActivity(i);
 				break;
+			case R.id.imageButton6:
+				i = new Intent(this, PastEventsViewActivity.class);
+				startActivity(i);
+				break;
+			
 			default:break;
 		}
 

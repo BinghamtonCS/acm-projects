@@ -28,39 +28,44 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int AboutViewDescrip=0x7f080013;
+        public static final int AboutViewDescrip=0x7f080014;
         public static final int aboutText=0x7f080000;
-        public static final int action_settings=0x7f080016;
+        public static final int action_settings=0x7f080018;
         public static final int calendarView=0x7f080002;
         public static final int facebookView=0x7f080003;
-        public static final int imageButton1=0x7f080005;
-        public static final int imageButton2=0x7f080006;
-        public static final int imageButton3=0x7f080007;
-        public static final int imageButton4=0x7f080008;
-        public static final int imageButton5=0x7f08000d;
-        public static final int imageButton6=0x7f08000e;
-        public static final int imageButton7=0x7f08000f;
-        public static final int label1=0x7f080009;
-        public static final int label2=0x7f08000a;
-        public static final int label3=0x7f08000b;
-        public static final int label4=0x7f08000c;
-        public static final int label5=0x7f080010;
-        public static final int label6=0x7f080011;
-        public static final int label7=0x7f080012;
-        public static final int lblListHeader=0x7f080014;
-        public static final int lblListItem=0x7f080015;
+        public static final int imageButton1=0x7f080006;
+        public static final int imageButton2=0x7f080007;
+        public static final int imageButton3=0x7f080008;
+        public static final int imageButton4=0x7f080009;
+        public static final int imageButton5=0x7f08000e;
+        public static final int imageButton6=0x7f08000f;
+        public static final int imageButton7=0x7f080010;
+        public static final int label1=0x7f08000a;
+        public static final int label2=0x7f08000b;
+        public static final int label3=0x7f08000c;
+        public static final int label4=0x7f08000d;
+        public static final int label5=0x7f080011;
+        public static final int label6=0x7f080012;
+        public static final int label7=0x7f080013;
+        public static final int lblListHeader=0x7f080015;
+        public static final int lblListItem=0x7f080016;
         public static final int lvExp=0x7f080001;
         public static final int membersText=0x7f080004;
+        public static final int memberslistview=0x7f080017;
+        public static final int pastEventsView=0x7f080005;
     }
     public static final class layout {
         public static final int activity_about_view=0x7f030000;
         public static final int activity_calendar_view=0x7f030001;
         public static final int activity_facebook_view=0x7f030002;
         public static final int activity_members_view=0x7f030003;
-        public static final int activity_wib_app=0x7f030004;
-        public static final int hard_coded_text=0x7f030005;
-        public static final int list_group=0x7f030006;
-        public static final int list_item=0x7f030007;
+        public static final int activity_past_events_view=0x7f030004;
+        public static final int activity_wib_app=0x7f030005;
+        public static final int hard_coded_text=0x7f030006;
+        public static final int list_group=0x7f030007;
+        public static final int list_item=0x7f030008;
+        public static final int listitem=0x7f030009;
+        public static final int memberslistview=0x7f03000a;
     }
     public static final class menu {
         public static final int about_view=0x7f070000;
@@ -85,6 +90,7 @@ public final class R {
         public static final int title_activity_calendar_view=0x7f05000f;
         public static final int title_activity_facebook_view=0x7f05000b;
         public static final int title_activity_members_view=0x7f05000e;
+        public static final int title_activity_past_events_view=0x7f050010;
         public static final int title_activity_web_view=0x7f050009;
         public static final int title_activity_wib_app=0x7f05000d;
     }

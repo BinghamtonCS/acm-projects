@@ -17,5 +17,6 @@
     <string name="title_activity_wib_app">WIB App</string>
     <string name="title_activity_members_view">MembersViewActivity</string>
     <string name="title_activity_calendar_view">CalendarViewActivity</string>
+    <string name="title_activity_past_events_view">Past Events</string>
 
 </resources>

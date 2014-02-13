@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -49,8 +50,16 @@ public class MembersViewActivity extends Activity {
 //		else
 		{
 			System.out.println("Check Date returned false");
-			new GetMembersTask().execute();
-			members = GetMembers.get();
+			try {
+				members = new GetMembersTask().execute().get();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//members = GetMembers.get();
 		}
 		printNames();
 	}

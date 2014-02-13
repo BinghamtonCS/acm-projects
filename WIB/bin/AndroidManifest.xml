@@ -49,6 +49,10 @@
             android:name="com.gabeochoa.wib.CalendarViewActivity"
             android:label="@string/title_activity_calendar_view" >
         </activity>
+        <activity
+            android:name="com.gabeochoa.wib.PastEventsViewActivity"
+            android:label="@string/title_activity_past_events_view" >
+        </activity>
     </application>
 
 </manifest>
