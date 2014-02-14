@@ -32,6 +32,7 @@ public class Person {
 		return pictureUrl;
 	}
 	
+	@Override
 	public String toString()
 	{
 		return "Name: "+name+"\n Position: "+position+"\n URL: "+pictureUrl+" \n";

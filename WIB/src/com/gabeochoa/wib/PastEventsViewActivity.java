@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class PastEventsViewActivity extends Activity{
 	private static final String TAG = "PastEventViewActivity";
@@ -23,6 +24,7 @@ public class PastEventsViewActivity extends Activity{
 	private void initUI()
 	{
 		webView = (WebView)findViewById(R.id.pastEventsView);
+		webView.setWebViewClient(new WebViewClient());
 		webView.loadUrl("http://www.binghamtonwib.com/past-events/");
 	}
 

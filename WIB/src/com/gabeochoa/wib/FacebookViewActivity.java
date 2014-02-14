@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class FacebookViewActivity extends Activity
 {
@@ -24,6 +25,7 @@ public class FacebookViewActivity extends Activity
 	private void initUI()
 	{
 		webView = (WebView)findViewById(R.id.facebookView);
+		webView.setWebViewClient(new WebViewClient());
 		webView.loadUrl("https://www.facebook.com/BinghamtonWIB");
 	}
 

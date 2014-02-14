@@ -19,7 +19,6 @@ import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Environment;
 
 /**

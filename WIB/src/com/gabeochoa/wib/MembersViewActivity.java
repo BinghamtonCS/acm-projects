@@ -143,6 +143,7 @@ public class MembersViewActivity extends Activity {
 	}
 
 	private class GetMembersTask extends AsyncTask<String, Integer, ArrayList<Person>> {
+		@Override
 		protected ArrayList<Person> doInBackground(String... urls) {
 			
 			try {
@@ -157,6 +158,7 @@ public class MembersViewActivity extends Activity {
 			return null;
 		}
 
+		@Override
 		protected void onProgressUpdate(Integer... progress) {
 
 

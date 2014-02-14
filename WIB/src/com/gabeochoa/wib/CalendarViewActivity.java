@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class CalendarViewActivity extends Activity
 {
@@ -24,6 +25,8 @@ public class CalendarViewActivity extends Activity
 	private void initUI()
 	{
 		webView = (WebView)findViewById(R.id.calendarView);
+		webView.setWebViewClient(new WebViewClient());
+		webView.getSettings().setJavaScriptEnabled(true);
 		webView.loadUrl("http://www.binghamtonwib.com/events/calendar/#content");
 	}
 
