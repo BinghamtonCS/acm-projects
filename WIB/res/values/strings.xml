@@ -6,9 +6,9 @@
     <string name="imgButtonOneLabel">About</string>
     <string name="imgButtonTwoLabel">Members</string>
     <string name="imgButtonThreeLabel">Calendar</string>
-    <string name="imgButtonFourLabel">Button 4</string>
+    <string name="imgButtonFourLabel">Twitter</string>
     <string name="imgButtonFiveLabel">Facebook</string>
-    <string name="imgButtonSixLabel">Button 6</string>
+    <string name="imgButtonSixLabel">Past Events</string>
     <string name="imgButtonSevenLabel">Button 7</string>
     <string name="title_activity_web_view">WebViewActivity</string>
     <string name="hello_world">Hello world!</string>

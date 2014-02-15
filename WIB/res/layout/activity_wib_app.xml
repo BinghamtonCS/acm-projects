@@ -49,43 +49,47 @@
     <!-- TextView positioning and sizing can be fixed once we know what the buttons do. -->
     <TextView
         android:id="@+id/label1"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/image_button_size"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageButton1"
         android:layout_below="@+id/imageButton1"
+        android:layout_alignLeft="@+id/imageButton1"
+        android:gravity="center"
         android:text="@string/imgButtonOneLabel"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="@dimen/label_size" />
 
     <TextView
         android:id="@+id/label2"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/image_button_size"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageButton2"
         android:layout_below="@+id/imageButton2"
         android:layout_toRightOf="@+id/imageButton1"
+        android:gravity="center"
         android:text="@string/imgButtonTwoLabel"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="@dimen/label_size" />
 
     <TextView
         android:id="@+id/label3"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/image_button_size"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageButton3"
         android:layout_below="@+id/imageButton3"
         android:layout_toRightOf="@+id/imageButton2"
+        android:gravity="center"
         android:text="@string/imgButtonThreeLabel"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="@dimen/label_size" />
 
     <TextView
         android:id="@+id/label4"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/image_button_size"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageButton4"
         android:layout_below="@+id/imageButton4"
         android:layout_toRightOf="@+id/imageButton3"
+        android:gravity="center"
         android:text="@string/imgButtonFourLabel"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="@dimen/label_size" />
@@ -125,30 +129,33 @@
 
     <TextView
         android:id="@+id/label5"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/image_button_size"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageButton5"
         android:layout_below="@+id/imageButton5"
+        android:gravity="center"
         android:text="@string/imgButtonFiveLabel"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="@dimen/label_size" />
     
     <TextView
         android:id="@+id/label6"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/image_button_size"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageButton6"
         android:layout_below="@+id/imageButton6"
+        android:gravity="center"
         android:text="@string/imgButtonSixLabel"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="@dimen/label_size" />
     
     <TextView
         android:id="@+id/label7"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/image_button_size"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageButton7"
         android:layout_below="@+id/imageButton7"
+        android:gravity="center"
         android:text="@string/imgButtonSevenLabel"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="@dimen/label_size" />
