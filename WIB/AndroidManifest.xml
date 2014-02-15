@@ -15,7 +15,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" android:logo="@drawable/placeholderimage">
+        android:logo="@drawable/placeholderimage"
+        android:theme="@style/AppTheme" >
         <activity
             android:name="com.gabeochoa.wib.WIB_app"
             android:label="@string/title_activity_wib_app" >
@@ -52,6 +53,10 @@
         <activity
             android:name="com.gabeochoa.wib.PastEventsViewActivity"
             android:label="@string/title_activity_past_events_view" >
+        </activity>
+        <activity
+            android:name="com.gabeochoa.wib.TwitterViewActivity"
+            android:label="@string/title_activity_twitter_view" >
         </activity>
     </application>
 

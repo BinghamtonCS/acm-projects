@@ -126,7 +126,8 @@ public class WIB_app extends Activity implements OnClickListener
 				startActivity(i);
 				break;
 			case R.id.imageButton4:
-				Toast.makeText(this, "You pressed Button 4", Toast.LENGTH_SHORT).show();
+				i = new Intent(this, TwitterViewActivity.class);
+				startActivity(i);
 				break;
 			case R.id.imageButton5:
 				i = new Intent(this, FacebookViewActivity.class);
