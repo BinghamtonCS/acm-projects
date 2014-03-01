@@ -24,7 +24,8 @@ public class CalculatorMainView extends JFrame implements ActionListener {
 	private JLabel field = new JLabel("0.0");
 	private JButton buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven,
 		buttonEight, buttonNine, buttonSin, buttonCos, buttonTan, buttonDivide, buttonMinus, buttonMultiply,
-		buttonPlus, buttonZero, buttonDecimal, buttonNeg, buttonEquals;
+		buttonPlus, buttonZero, buttonDecimal, buttonNeg, buttonEquals, buttonParOpen, buttonParClose, buttonClear;
+	private JPanel resultArea, buttonArea;
 	
 	public CalculatorMainView() {
 		super("Calculator");
@@ -32,13 +33,139 @@ public class CalculatorMainView extends JFrame implements ActionListener {
 		Container c = getContentPane();
 
 		//JPanel for result area
-		JPanel resultArea = new JPanel();
+		resultArea = new JPanel();
 		c.add(resultArea,BorderLayout.NORTH);
 		
 		//JPanel for button area
-		JPanel buttonArea = new JPanel();
+		buttonArea = new JPanel();
 		c.add(buttonArea,BorderLayout.CENTER);
 		
+		createField();
+		createButtons();
+	}
+	
+	private void updateField() {
+		field.setText(numberField);
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		CalculatorMainView windows = new CalculatorMainView();
+		windows.setSize(480,500);
+		windows.show();
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (numberField == "0.0") {
+			numberField = "";
+		}
+		
+		JButton src = (JButton)e.getSource();
+		
+		if (src == buttonOne) {
+			numberField += "1";
+		}
+		
+		if (src == buttonTwo) {
+			numberField += "2";
+		}
+		
+		if (src == buttonThree) {
+			numberField += "3";
+		}
+		
+		if (src == buttonFour) {
+			numberField += "4";
+		}
+		
+		if (src == buttonFive) {
+			numberField += "5";
+		}
+		
+		if (src == buttonSix) {
+			numberField += "6";
+		}
+		
+		if (src == buttonSeven) {
+			numberField += "7";
+		}
+		
+		if (src == buttonEight) {
+			numberField += "8";
+		}
+		
+		if (src == buttonNine) {
+			numberField += "9";
+		}
+		
+		if (src == buttonZero) {
+			numberField += "0";
+		}
+		
+		if (src == buttonDecimal) {
+			numberField += ".";
+		}
+		
+		if (src == buttonDivide) {
+			numberField += "/";
+		}
+		
+		if (src == buttonMultiply) {
+			numberField += "*";
+		}
+		
+		if (src == buttonMinus) {
+			numberField += "-";
+		}
+		
+		if (src == buttonPlus) {
+			numberField += "+";
+		}
+		
+		if (src == buttonNeg) {
+			if((numberField == "") || !(numberField.substring(0,1).equals("-")))
+				numberField = "-" + numberField;
+			else
+				numberField = numberField.substring(1);
+		}
+		
+		if (src == buttonParOpen) {
+			numberField += "(";
+		}
+		
+		if (src == buttonParClose) {
+			numberField += ")";
+		}
+		
+		if (src == buttonClear) {
+			numberField = "0.0";
+		}
+		
+		if (src == buttonSin) {
+			numberField += "sin(";
+		}
+		
+		if (src == buttonCos) {
+			numberField += "cos(";
+		}
+		
+		if (src == buttonTan) {
+			numberField += "tan(";
+		}
+		
+		if (src == buttonEquals) {
+			/* Implement control here
+			 * 	Use numberField to call method in control
+			 */
+		}
+		
+		updateField();
+		
+	}
+	
+	private void createField () {
 		//Creates label for entered buttons
 		field.setHorizontalAlignment(SwingConstants.RIGHT);
         Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
@@ -46,9 +173,31 @@ public class CalculatorMainView extends JFrame implements ActionListener {
         field.setPreferredSize(new Dimension(400, 100));
 		
 		resultArea.add(field);
-		
+	}
+	
+	private void createButtons() {
 		//Allows for rows of buttons to be placed on layout
 		buttonArea.setLayout(new BoxLayout(buttonArea, BoxLayout.Y_AXIS));
+		
+		//Zero row
+		JPanel row0 = new JPanel();
+		
+		buttonParOpen = new JButton("(");
+		buttonParOpen.setPreferredSize(new Dimension(100, 50));
+		row0.add(buttonParOpen);
+		buttonParOpen.addActionListener(this);
+		
+		buttonParClose = new JButton(")");
+		buttonParClose.setPreferredSize(new Dimension(100, 50));
+		row0.add(buttonParClose);
+		buttonParClose.addActionListener(this);
+		
+		buttonClear = new JButton("C");
+		buttonClear.setPreferredSize(new Dimension(100,50));
+		row0.add(buttonClear);
+		buttonClear.addActionListener(this);
+		
+		buttonArea.add(row0);
 		
 		//First row of buttons
 		JPanel row1 = new JPanel();
@@ -174,103 +323,6 @@ public class CalculatorMainView extends JFrame implements ActionListener {
 		buttonEquals.addActionListener(this);
 		
 		buttonArea.add(row5);
-	}
-	
-	public void updateField() {
-		field.setText(numberField);
-	}
-	
-	@SuppressWarnings("deprecation")
-	public static void main(String[] args) {
-		CalculatorMainView windows = new CalculatorMainView();
-		windows.setSize(480,480);
-		windows.show();
-		
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (numberField == "0.0") {
-			numberField = "";
-		}
-		
-		JButton src = (JButton)e.getSource();
-		
-		if (src == buttonOne) {
-			numberField += "1";
-		}
-		
-		if (src == buttonTwo) {
-			numberField += "2";
-		}
-		
-		if (src == buttonThree) {
-			numberField += "3";
-		}
-		
-		if (src == buttonFour) {
-			numberField += "4";
-		}
-		
-		if (src == buttonFive) {
-			numberField += "5";
-		}
-		
-		if (src == buttonSix) {
-			numberField += "6";
-		}
-		
-		if (src == buttonSeven) {
-			numberField += "7";
-		}
-		
-		if (src == buttonEight) {
-			numberField += "8";
-		}
-		
-		if (src == buttonNine) {
-			numberField += "9";
-		}
-		
-		if (src == buttonZero) {
-			numberField += "0";
-		}
-		
-		if (src == buttonDecimal) {
-			numberField += ".";
-		}
-		
-		if (src == buttonDivide) {
-			numberField += "/";
-		}
-		
-		if (src == buttonMultiply) {
-			numberField += "*";
-		}
-		
-		if (src == buttonMinus) {
-			numberField += "-";
-		}
-		
-		if (src == buttonPlus) {
-			numberField += "+";
-		}
-		
-		if (src == buttonNeg) {
-			if((numberField == "") || !(numberField.substring(0,1).equals("-")))
-				numberField = "-" + numberField;
-			else
-				numberField = numberField.substring(1);
-		}
-		
-		if (src == buttonEquals) {
-			/* Implement control here
-			 * 	Use numberField to call method in control
-			 */
-		}
-		
-		updateField();
-		
 	}
 	
 }
