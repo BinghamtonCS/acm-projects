@@ -8,9 +8,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <Button
+        android:id="@+id/userDataButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/mapDataButton"
+        android:layout_marginTop="32dp"
+        android:text="Get User Data"
+        android:onClick="startUserActivity" />
+
+    <Button
+        android:id="@+id/mapDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/roadDataButton"
+        android:layout_below="@+id/userDataButton"
+        android:layout_marginTop="74dp"
+        android:text="Get Map Data"
+        android:onClick="startMapActivity" />
+
+    <Button
+        android:id="@+id/roadDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mapDataButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:text="Get Road Data"
+        android:onClick="startRoadActivity" />
 
 </RelativeLayout>
