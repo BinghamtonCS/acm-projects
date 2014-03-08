@@ -1,18 +1,30 @@
 package mainview;
 
+import java.awt.Container;
+
 import javax.swing.JFrame;
 
 public class CalculatorMainView extends JFrame {
-
+	
 	public CalculatorMainView() {
 		super("Calculator");
-		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
+		Container c = getContentPane();
+
+		//JPanel for result area
+		CalculatorFieldPanel cfp = new CalculatorFieldPanel(c);
+		
+		//JPanel for button area
+		CalculatorButtonPanel cbp = new CalculatorButtonPanel(c);
+		
 	}
 	
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		CalculatorMainView windows = new CalculatorMainView();
-		windows.setSize(640,480);
-		windows.show();		
+		windows.setSize(480,500);
+		windows.show();
+		
 	}
 	
 }
