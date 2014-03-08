@@ -23,7 +23,8 @@ public class MainActivity extends Activity {
 	
 	public void startUserActivity(View v)
 	{
-		
+		Intent intent = new Intent(this, UserDataActivity.class);
+		startActivity(intent);
 	}
 	
 	public void startMapActivity(View v)
