@@ -13,5 +13,31 @@
 	    android:enabled="true"
 	    android:apiKey="@string/api_key"
 	/>
+
+    <TextView
+        android:id="@+id/roadData"
+		android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="32dp"
+        android:text="Speed Limit:"
+        android:textSize="20sp"
+        android:textColor="#999999"
+        android:background="@drawable/info_bg" />
+
+    <TextView
+        android:id="@+id/userData"
+		android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/roadData"
+        android:layout_alignBottom="@+id/roadData"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="42dp"
+        android:text="Current Speed: "
+        android:textSize="20sp"
+        android:textColor="#999999"
+        android:background="@drawable/info_bg" />
     
 </RelativeLayout>

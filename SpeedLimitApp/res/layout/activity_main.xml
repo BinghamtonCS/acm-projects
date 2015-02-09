@@ -6,9 +6,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity" 
+    android:background="@drawable/road">
 
-    <Button
+    <!-- <Button
         android:id="@+id/userDataButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,19 +17,9 @@
         android:layout_alignRight="@+id/mapDataButton"
         android:layout_marginTop="32dp"
         android:text="Get User Data"
-        android:onClick="startUserActivity" />
+        android:onClick="startUserActivity" /> -->
 
-    <Button
-        android:id="@+id/mapDataButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/roadDataButton"
-        android:layout_below="@+id/userDataButton"
-        android:layout_marginTop="74dp"
-        android:text="Get Map Data"
-        android:onClick="startMapActivity" />
-
-    <Button
+    <!-- <Button
         android:id="@+id/roadDataButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,6 +27,24 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="67dp"
         android:text="Get Road Data"
-        android:onClick="startRoadActivity" />
+        android:onClick="startRoadActivity" /> -->
+
+    <Button
+        android:id="@+id/mapDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="startMapActivity"
+        android:text="Get Road Data" />
+
+    <Button
+        android:id="@+id/credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:gravity="center"
+        android:text="Image courtesy of Naypong\n@FreeDigitalPhotos.net" />
 
 </RelativeLayout>
