@@ -3,21 +3,18 @@ package mainview;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class CalculatorButtonPanel extends JFrame implements ActionListener {
+@SuppressWarnings("serial")
+public class CalculatorButtonPanel extends JFrame {
 
 	private JButton buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven,
 	buttonEight, buttonNine, buttonSin, buttonCos, buttonTan, buttonDivide, buttonMinus, buttonMultiply,
 	buttonPlus, buttonZero, buttonDecimal, buttonNeg, buttonEquals, buttonParOpen, buttonParClose, buttonClear;
 	private JPanel buttonArea;
-	private String numberField = "0.0";
 
 	public CalculatorButtonPanel(Container c) {
 		
@@ -37,17 +34,17 @@ public class CalculatorButtonPanel extends JFrame implements ActionListener {
 		buttonParOpen = new JButton("(");
 		buttonParOpen.setPreferredSize(new Dimension(100, 50));
 		row0.add(buttonParOpen);
-		buttonParOpen.addActionListener(this);
+		buttonParOpen.addActionListener(new MiscPressed());
 		
 		buttonParClose = new JButton(")");
 		buttonParClose.setPreferredSize(new Dimension(100, 50));
 		row0.add(buttonParClose);
-		buttonParClose.addActionListener(this);
+		buttonParClose.addActionListener(new MiscPressed());
 		
 		buttonClear = new JButton("C");
 		buttonClear.setPreferredSize(new Dimension(100,50));
 		row0.add(buttonClear);
-		buttonClear.addActionListener(this);
+		buttonClear.addActionListener(new MiscPressed());
 		
 		buttonArea.add(row0);
 		
@@ -57,22 +54,22 @@ public class CalculatorButtonPanel extends JFrame implements ActionListener {
 		buttonSin = new JButton("sin");
 		buttonSin.setPreferredSize(new Dimension(100, 50));
 		row1.add(buttonSin);
-		buttonSin.addActionListener(this);
+		buttonSin.addActionListener(new TrigPressed());
 		
 		buttonCos = new JButton("cos");
 		buttonCos.setPreferredSize(new Dimension(100, 50));
 		row1.add(buttonCos);
-		buttonCos.addActionListener(this);
+		buttonCos.addActionListener(new TrigPressed());
 		
 		buttonTan = new JButton("tan");
 		buttonTan.setPreferredSize(new Dimension(100, 50));
 		row1.add(buttonTan);
-		buttonTan.addActionListener(this);
+		buttonTan.addActionListener(new TrigPressed());
 		
 		buttonDivide = new JButton("/");
 		buttonDivide.setPreferredSize(new Dimension(100, 50));
 		row1.add(buttonDivide);
-		buttonDivide.addActionListener(this);
+		buttonDivide.addActionListener(new OperationPressed());
 		
 		buttonArea.add(row1);
 		
@@ -82,22 +79,22 @@ public class CalculatorButtonPanel extends JFrame implements ActionListener {
 		buttonSeven = new JButton("7");
 		buttonSeven.setPreferredSize(new Dimension(100, 50));
 		row2.add(buttonSeven);
-		buttonSeven.addActionListener(this);
+		buttonSeven.addActionListener(new NumberPressed());
 		
 		buttonEight = new JButton("8");
 		buttonEight.setPreferredSize(new Dimension(100, 50));
 		row2.add(buttonEight);
-		buttonEight.addActionListener(this);
+		buttonEight.addActionListener(new NumberPressed());
 		
 		buttonNine = new JButton("9");
 		buttonNine.setPreferredSize(new Dimension(100, 50));
 		row2.add(buttonNine);
-		buttonNine.addActionListener(this);
+		buttonNine.addActionListener(new NumberPressed());
 		
-		buttonMultiply = new JButton("x");
+		buttonMultiply = new JButton("*");
 		buttonMultiply.setPreferredSize(new Dimension(100, 50));
 		row2.add(buttonMultiply);
-		buttonMultiply.addActionListener(this);
+		buttonMultiply.addActionListener(new OperationPressed());
 		
 		buttonArea.add(row2);
 		
@@ -107,22 +104,22 @@ public class CalculatorButtonPanel extends JFrame implements ActionListener {
 		buttonFour = new JButton("4");
 		buttonFour.setPreferredSize(new Dimension(100, 50));
 		row3.add(buttonFour);
-		buttonFour.addActionListener(this);
+		buttonFour.addActionListener(new NumberPressed());
 		
 		buttonFive = new JButton("5");
 		buttonFive.setPreferredSize(new Dimension(100, 50));
 		row3.add(buttonFive);
-		buttonFive.addActionListener(this);
+		buttonFive.addActionListener(new NumberPressed());
 		
 		buttonSix = new JButton("6");
 		buttonSix.setPreferredSize(new Dimension(100, 50));
 		row3.add(buttonSix);
-		buttonSix.addActionListener(this);
+		buttonSix.addActionListener(new NumberPressed());
 		
 		buttonMinus = new JButton("-");
 		buttonMinus.setPreferredSize(new Dimension(100, 50));
 		row3.add(buttonMinus);
-		buttonMinus.addActionListener(this);
+		buttonMinus.addActionListener(new OperationPressed());
 		
 		buttonArea.add(row3);
 		
@@ -132,22 +129,22 @@ public class CalculatorButtonPanel extends JFrame implements ActionListener {
 		buttonOne = new JButton("1");
 		buttonOne.setPreferredSize(new Dimension(100, 50));
 		row4.add(buttonOne);
-		buttonOne.addActionListener(this);
+		buttonOne.addActionListener(new NumberPressed());
 		
 		buttonTwo = new JButton("2");
 		buttonTwo.setPreferredSize(new Dimension(100, 50));
 		row4.add(buttonTwo);
-		buttonTwo.addActionListener(this);
+		buttonTwo.addActionListener(new NumberPressed());
 		
 		buttonThree = new JButton("3");
 		buttonThree.setPreferredSize(new Dimension(100, 50));
 		row4.add(buttonThree);
-		buttonThree.addActionListener(this);
+		buttonThree.addActionListener(new NumberPressed());
 		
 		buttonPlus = new JButton("+");
 		buttonPlus.setPreferredSize(new Dimension(100, 50));
 		row4.add(buttonPlus);
-		buttonPlus.addActionListener(this);
+		buttonPlus.addActionListener(new OperationPressed());
 		
 		buttonArea.add(row4);
 		
@@ -157,133 +154,24 @@ public class CalculatorButtonPanel extends JFrame implements ActionListener {
 		buttonZero = new JButton("0");
 		buttonZero.setPreferredSize(new Dimension(100, 50));
 		row5.add(buttonZero);
-		buttonZero.addActionListener(this);
+		buttonZero.addActionListener(new NumberPressed());
 		
 		buttonDecimal = new JButton(".");
 		buttonDecimal.setPreferredSize(new Dimension(100, 50));
 		row5.add(buttonDecimal);
-		buttonDecimal.addActionListener(this);
+		buttonDecimal.addActionListener(new MiscPressed());
 		
 		buttonNeg = new JButton("(-)");
 		buttonNeg.setPreferredSize(new Dimension(100, 50));
 		row5.add(buttonNeg);
-		buttonNeg.addActionListener(this);
+		buttonNeg.addActionListener(new MiscPressed());
 		
 		buttonEquals = new JButton("=");
 		buttonEquals.setPreferredSize(new Dimension(100, 50));
 		row5.add(buttonEquals);
-		buttonEquals.addActionListener(this);
+		buttonEquals.addActionListener(new MiscPressed());
 		
 		buttonArea.add(row5);
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (numberField == "0.0") {
-			numberField = "";
-		}
-		
-		JButton src = (JButton)e.getSource();
-		
-		if (src == buttonOne) {
-			numberField += "1";
-		}
-		
-		if (src == buttonTwo) {
-			numberField += "2";
-		}
-		
-		if (src == buttonThree) {
-			numberField += "3";
-		}
-		
-		if (src == buttonFour) {
-			numberField += "4";
-		}
-		
-		if (src == buttonFive) {
-			numberField += "5";
-		}
-		
-		if (src == buttonSix) {
-			numberField += "6";
-		}
-		
-		if (src == buttonSeven) {
-			numberField += "7";
-		}
-		
-		if (src == buttonEight) {
-			numberField += "8";
-		}
-		
-		if (src == buttonNine) {
-			numberField += "9";
-		}
-		
-		if (src == buttonZero) {
-			numberField += "0";
-		}
-		
-		if (src == buttonDecimal) {
-			numberField += ".";
-		}
-		
-		if (src == buttonDivide) {
-			numberField += "/";
-		}
-		
-		if (src == buttonMultiply) {
-			numberField += "*";
-		}
-		
-		if (src == buttonMinus) {
-			numberField += "-";
-		}
-		
-		if (src == buttonPlus) {
-			numberField += "+";
-		}
-		
-		if (src == buttonNeg) {
-			if((numberField == "") || !(numberField.substring(0,1).equals("-")))
-				numberField = "-" + numberField;
-			else
-				numberField = numberField.substring(1);
-		}
-		
-		if (src == buttonParOpen) {
-			numberField += "(";
-		}
-		
-		if (src == buttonParClose) {
-			numberField += ")";
-		}
-		
-		if (src == buttonClear) {
-			numberField = "0.0";
-		}
-		
-		if (src == buttonSin) {
-			numberField += "sin(";
-		}
-		
-		if (src == buttonCos) {
-			numberField += "cos(";
-		}
-		
-		if (src == buttonTan) {
-			numberField += "tan(";
-		}
-		
-		if (src == buttonEquals) {
-			/* Implement control here
-			 * 	Use numberField to call method in control
-			 */
-		}
-		
-		CalculatorFieldPanel.updateField(numberField);
-		
 	}
 	
 }

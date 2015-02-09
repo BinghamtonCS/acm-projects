@@ -6,15 +6,22 @@ import javax.swing.JFrame;
 
 public class CalculatorMainView extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public CalculatorMainView() {
-		super("Calculator");
+		super("Binghamton ACM Calculator");
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		Container c = getContentPane();
 
 		//JPanel for result area
+		@SuppressWarnings("unused")
 		CalculatorFieldPanel cfp = new CalculatorFieldPanel(c);
 		
 		//JPanel for button area
+		@SuppressWarnings("unused")
 		CalculatorButtonPanel cbp = new CalculatorButtonPanel(c);
 		
 	}
